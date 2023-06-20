@@ -1,7 +1,11 @@
 .App {
   text-align: center;
+
 }
 
+body::-webkit-scrollbar {
+  display: none; /* cho Chrome, Safari, and Opera */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
