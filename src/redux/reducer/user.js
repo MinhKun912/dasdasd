@@ -1,6 +1,7 @@
 import {LOGIN_SUCCESS, USER_SUCCESS} from "../constances/actionTypes";
 
 let userlogin = JSON.parse(localStorage.getItem("user-login"))
+console.log(userlogin)
 const initialState = {
     listUsers:[],
     user:userlogin||{},

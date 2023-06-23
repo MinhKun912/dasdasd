@@ -13,14 +13,18 @@ import MenuLink from "../menuLink/MenuLink";
 import Friends from "../friends/Friends";
 import { Users } from "../../data";
 import { DarkModeContext } from "../../context/darkModeContext" ;
+import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 const Sidebar = () => {
+  const dispa = useDispatch();
+
   const { dispatch } = useContext(DarkModeContext);
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
         <MenuLink Icon={<RssFeedIcon />} text="Feed" />
-        <MenuLink Icon={<ChatIcon />} text="Chats" />
+        <MenuLink Icon={<ChatIcon />} id="chat"  text="Group Chats" />
         <MenuLink Icon={<VideocamIcon />} text="Videos" />
         <MenuLink Icon={<GroupsIcon />} text="Friends" />
         <MenuLink Icon={<BookmarkIcon />} text="Bookmarks" />
@@ -31,7 +35,7 @@ const Sidebar = () => {
         </span>
         {/*<MenuLink Icon={<ExitToAppOutlinedIcon />} text="Logout" />*/}
 
-        <button className="sidebarButton">Show More</button>
+        {/*<button className="sidebarButton">logout</button>*/}
         <hr className="sidebarHr" />
 
         <ul className="sidebarFriendList">

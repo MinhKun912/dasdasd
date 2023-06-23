@@ -41,10 +41,10 @@ export const setCurrentUser = (user) => {
         payload: user
     };
 };
-export const act_getPost=(post) =>{
+export const act_getPost=() =>{
+    console.log("postaction")
     return{
         type:actionTypes.POST_GET,
-        payload:post
     }
 }
 export const act_create_cmt=(cmt)=>{
@@ -60,10 +60,9 @@ export const act_getPost_profile=(id)=>{
         payload:id
     }
 }
-export const act_getPost_comment=(PostId)=>{
+export const act_getPost_comment=()=>{
     return{
-        type:"GET_COMMENT_POST",
-        payload:PostId
+        type:"GET_COMMENT"
     }
 }
 export const act_create_Post=(post)=>{
@@ -83,5 +82,12 @@ export const act_get_imageUrl=(imgUrl)=>{
     return {
         type:actionTypes.GET_IMG_URL,
         payload:imgUrl
+    }
+}
+export const act_get_lkike=(action)=>{
+    console.log(action)
+    return {
+        type:actionTypes.GET_LIKE,
+        payload:action
     }
 }

@@ -4,7 +4,7 @@ import {
     add_like,
     CREATE_CMT,
     CREATE_POST,
-    GET_COMMENT_SAGA,
+    GET_COMMENT_SAGA, get_like,
     getImgUrl,
     login,
     POST_SAGA_GET,
@@ -19,10 +19,7 @@ export const rootSaga = function* () {
         takeLatest(actionType.SET_USER,login),
         takeLatest(actionType.POST_GET,POST_SAGA_GET),
         takeLatest(actionType.POST_CREATE,CREATE_POST),
-
 takeLatest(actionType.POST_LIKE,add_like),
-
-
         takeLatest(actionType.CMT_CREATE,CREATE_CMT),
         takeLatest(actionType.DO_LOGIN,DO_LOGIN),
         takeLatest(actionType.GET_IMG_URL,getImgUrl),

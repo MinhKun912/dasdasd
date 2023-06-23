@@ -30,5 +30,9 @@ export const add_comment_post=async (payload)=>{
     return  await instance.post("/api/auth/comments/comment",payload)
 }
 export const add_like=async (payload)=>{
+    console.log("like pay load",payload)
     return await instance.post('/api/auth/like/add',payload)
+}
+export const get_like=async (payload,id)=>{
+    return await instance.post('/api/auth/like/add/count'+id,payload)
 }

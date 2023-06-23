@@ -1,5 +1,4 @@
 import {GET_COMMENT, POST_GET_SUCCSES} from "../constances/actionTypes";
-import {loginSuscess} from "../action/actions";
 
 const initState=[]
 ;

@@ -127,6 +127,18 @@
 display: flex;
         margin-top: 14px;
     }
+    //#videoPage::-webkit-media-controls {
+    //    filter: blur(9px);
+    //
+    //}
+    //#videoPage::-webkit-media-controls-enclosure {
+    //    filter: blur(3px);
+    //} #videoPage::-webkit-media-controls-panel  {
+    //          opacity: 0.5;
+    //}
+    #ok{
+        display: block;
+    }
     .cmt-avatar img {
         margin-right: 20px;
         width: 30px;

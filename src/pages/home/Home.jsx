@@ -1,6 +1,6 @@
 import React from "react";
 import Feed from "../../components/feed/Feed";
-import Navbar from "../../components/navbar/Navbar";
+import Header from "../../components/navbar/Header";
 import Rightbar from "../../components/rightbar/Rightbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./home.scss";
@@ -8,7 +8,7 @@ import "./home.scss";
 const Home = () => {
   return (
     <div className="home">
-      <Navbar />
+      <Header />
       <div className="homeContainer">
         <Sidebar />
         <Feed />

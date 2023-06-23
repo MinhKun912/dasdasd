@@ -14,8 +14,9 @@ import {
     list,
 } from "firebase/storage";
 import {useDispatch, useSelector} from "react-redux";
-import {act_create_Post, act_get_imageUrl} from "../../redux/action/actions";
+import {act_create_Post, act_get_imageUrl, act_getPost} from "../../redux/action/actions";
 import {storage} from "../../firebase";
+import {users} from "../../redux/reducer/user";
 
 const Share = () => {
 
@@ -46,11 +47,10 @@ const Share = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispath(act_create_Post({...newPost, imgUrl: imageUrl}));
+        document.querySelector(".shareInput").value="";
+
     };
-
-
     console.log(content)
-
     const removeImage = () => {
         setFile(null);
     };
@@ -60,7 +60,7 @@ const Share = () => {
                 <div className="shareWrapper">
                     <div className="shareTop">
                         <img
-                            src="/assets/person/user.jpg"
+                            src="https://th.bing.com/th/id/OIP.K-4RqDC6zFrpAG31ayDDOgHaHa?pid=ImgDet&rs=1"
                             alt=""
                             className="shareProfileImg"
                         />
@@ -71,10 +71,7 @@ const Share = () => {
                             value={newPost.content}
                             onChange={(e) =>
                                 setNewPost({...newPost, content: e.target.value})
-
-
-                        }
-
+                            }
                         />
                     </div>
                     <hr className="shareHr"/>
@@ -83,10 +80,7 @@ const Share = () => {
                             <img src={URL.createObjectURL(file)} alt="" className="shareImg"/>
                             <Close className="shareCancelImg" onClick={removeImage}/>
                         </div>
-
                     )}
-                    <button type="submit">Xac Nhan</button>
-                    <button type="submit">Upload</button>
                     <div className="shareBottom">
                         <div className="shareOptions">
                             <div className="shareOption">
@@ -106,8 +100,9 @@ const Share = () => {
                                     style={{display: "none"}}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     onChange={uploadFile}
-                                    />
+                                />
                             </label>
+                            
                             <div className="shareOption">
                                 <EmojiEmotions
                                     className="shareIcon"

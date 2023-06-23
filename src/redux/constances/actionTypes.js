@@ -9,6 +9,7 @@ export const CMT_CREATE = 'CREATE_CMT';
 export const POST_GET_SUCCSES = 'GET_POST_SUCSESS';
 export const DO_LOGIN = 'DO_LOGIN';
 export const GET_IMG_URL ="GET_IMG_URL";
+export const GET_LIKE ="GET_LIKE";
 
 export const GET_PROFILE_POST="GET_PROFILE_POST";
 
